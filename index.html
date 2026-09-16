@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070c">
+  <meta name="description" content="Магазин привилегий, кейсов и игровых услуг Minecraft PvP-сервера SunPvP.">
+  <title>SunPvP — Магазин</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0910'/%3E%3Cpath d='M12 36 30 8l-3 19 25-7-18 36 2-23z' fill='%23ff9d3d'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refinements.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SunPvP — на главную"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M12 36 30 8l-3 19 25-7-18 36 2-23z"/></svg></span><span>Sun<span>PvP</span></span></a>
+    <nav class="nav" aria-label="Основная навигация"><a class="active" href="#shop">Магазин</a><a href="#how">Как купить</a><a href="https://t.me/SunPvPAuth_bot" target="_blank" rel="noreferrer">Telegram</a></nav>
+    <button class="cart-button" type="button" data-open-cart aria-label="Открыть корзину" aria-expanded="false" aria-controls="cart-drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.1 9.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L20 7H6M9 20h.01M17 20h.01"/></svg><span class="cart-label">Корзина</span><span class="cart-count" data-cart-count>0</span></button>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div><div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> Официальный магазин сервера</p>
+        <h1 id="hero-title">Сражайся ярче.<br><em>Играй по-своему.</em></h1>
+        <p class="hero-copy">Привилегии, кейсы и полезные услуги для твоей игры на SunPvP.</p>
+        <div class="hero-actions"><a class="primary-action" href="#shop">Выбрать товар <span>↓</span></a><a class="secondary-action" href="https://t.me/SunPvPAuth_bot" target="_blank" rel="noreferrer">Привязать Telegram</a></div>
+      </div>
+      <div class="hero-note"><span class="note-icon">✦</span><span><b>Бонус за привязку</b><small>1 кейс в подарок</small></span></div>
+    </section>
+    <section class="shop-section" id="shop" aria-labelledby="shop-title">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> Каталог</p><h2 id="shop-title">Выбери свой путь</h2></div>
+        <div class="filters" role="group" aria-label="Фильтр товаров"><button class="filter active" type="button" data-filter="all" aria-pressed="true">Все</button><button class="filter" type="button" data-filter="rank" aria-pressed="false">Привилегии</button><button class="filter" type="button" data-filter="case" aria-pressed="false">Кейсы</button><button class="filter" type="button" data-filter="service" aria-pressed="false">Услуги</button></div>
+      </div>
+      <div class="product-grid" data-products aria-live="polite"></div>
+    </section>
+    <section class="how-section" id="how" aria-labelledby="how-title">
+      <div class="how-copy"><p class="eyebrow"><span></span> Быстрый старт</p><h2 id="how-title">Покупка без лишних шагов</h2><p>Добавь товары в корзину, укажи игровой ник и проверь состав заказа. Подключение платёжной системы будет выполнено следующим этапом.</p></div>
+      <ol class="steps"><li><b>01</b><span><strong>Выбери товар</strong><small>Ранг, кейс или услугу</small></span></li><li><b>02</b><span><strong>Укажи ник</strong><small>Точно как на сервере</small></span></li><li><b>03</b><span><strong>Получи покупку</strong><small>После подключения оплаты</small></span></li></ol>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M12 36 30 8l-3 19 25-7-18 36 2-23z"/></svg></span><span>Sun<span>PvP</span></span></a><p>SunPvP не связан с Mojang Studios.</p><a href="https://t.me/SunPvPAuth_bot" target="_blank" rel="noreferrer">Поддержка в Telegram ↗</a></footer>
+  <div class="drawer-backdrop" data-backdrop hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" data-cart-drawer role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cart-title" inert>
+    <div class="drawer-head"><div><p class="eyebrow"><span></span> Твой заказ</p><h2 id="cart-title">Корзина</h2></div><button class="icon-button" type="button" data-close-cart aria-label="Закрыть корзину">×</button></div>
+    <div class="cart-items" data-cart-items></div>
+    <div class="cart-empty" data-cart-empty><span>✦</span><h3>Пока пусто</h3><p>Добавь привилегию, кейс или услугу из каталога.</p><button type="button" data-close-cart data-scroll-shop>Перейти к товарам</button></div>
+    <div class="cart-summary" data-cart-summary hidden><label for="nickname">Никнейм на сервере</label><input id="nickname" name="nickname" type="text" maxlength="16" autocomplete="off" placeholder="Например, SunPlayer"><div class="total-row"><span>Итого</span><strong data-cart-total>0 ₽</strong></div><button class="checkout-button" type="button" data-checkout>Подготовить заказ</button><p class="checkout-note">Оплата пока не подключена — списаний не будет.</p></div>
+  </aside>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
